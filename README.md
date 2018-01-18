@@ -9,5 +9,3 @@ It uses :<br />
 * Soundcloud API to get the music playlist<br />
 <br />
 See the result : http://kidsofqc.com/
-              
-# kidsofqc
