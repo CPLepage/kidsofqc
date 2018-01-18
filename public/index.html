@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>KidsofQC</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="icon.png" />
+    
+    <meta property="og:title" content="KidsofQC" />
+    <meta property="og:description" content="We're all born as kids" />
+    <meta property="og:image" content="fb.png" />
+	<!-- SPELLS -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+    <script src="https://d2v52k3cl9vedd.cloudfront.net/plangular/3.1.0/plangular.min.js"></script>
+    
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/query.js"></script> <!-- load our todo service -->
+    <script src="js/directive/sizing.js"></script> <!-- load our todo directive-->
+	<script src="js/core.js"></script> <!-- load our main application -->
+	
+    <script src="script.js"></script> <!-- load our main application -->
+
+    
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="wrapper" ng-app="kidsofqc">
+        <div class="container" ng-controller="mainController">
+            <div id="topBar">
+                <div><a ng-click="about()">about</a></div>
+                <div><a ng-click="rand()">random</a></div>
+                <div>sets:
+                    <div><a ng-click="load(16, 2)">osheaga</a></div>
+                    <div><a ng-click="load(6, 2)">goin' out</a></div>
+                    <div><a ng-click="load(2, 2)">ayyy</a></div>
+                    <div><a ng-click="load(14, 2)">casablank 3yy</a></div>
+                    <div><a ng-click="load(10, 2)">pozin'</a></div>
+                    <div><a ng-click="load(0, 2)">gooo</a></div>
+                    <div><a ng-click="load(4, 2)">shows</a></div>
+                    <div><a ng-click="load(12, 2)">outdoors</a></div>
+                    <div><a ng-click="load(8, 2)">udem stuff</a></div>
+                </div>
+            </div>
+            <div id="about">
+                <div class="text"><p>Not caring about tomorrow, always just seeking to have fun, we're all profoundly dreaming of staying kids forever. For a whole year, Florence and myself, CP, tried to show what living and going out in Montreal was like. We carried disposable cameras everywhere so we could snap those unique moments and so we could be able to share the actual feeling of it. No high-end tech or post-editing. Only films and the crappiest flash.<br /><br />Enjoy our different sets or simply hit random for a randomly built set. The site was built to represent the feeling of looking at printed 4x6in photos. Receiving them in a random order and stacking them in a pile. Drop a beat from the player and scroll through the pics. I hope you'll remember the good times, but mostly, never forget that we're all born as kids.</p><br />
+                <blockquote>-Flo &amp; CP</blockquote><br />
+                <p class="social"><a href="https://www.instagram.com/kidsofqc/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a><a href="https://kidsofqc.tumblr.com" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i></a></p>
+                    <div class="credit">code by <a href="http://cplepage.com/" target="_blank">CP Lepage</a></div>
+                </div>
+                <div class="close" ng-click="close()"><img src="close.svg"></div>
+            </div>
+            <div class="bg"></div>
+            <photo ng-repeat="photo in photos" class="photos" repeat-end="onEnd()">
+                <div class="scene" id="scene{{$index}}">
+                    <div class="photo" id="target{{$index}}" style="background-image:url({{photo.url}});"></div>
+                </div>
+            </photo>
+            <div id="loader" data-loading="">
+                <div id="loading"></div>
+            </div>
+            <div id="scroll">
+                <!--iphone -->
+                <svg id="iphoneScroll" version="1.1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 132 275.9" xml:space="preserve">
+                    <g id="iphone" transform="translate(576.000000, 177.000000)" sketch:type="MSLayerGroup">
+                        <path id="bezel_2_" sketch:type="MSShapeGroup" class="st0" d="M-445,81.9c0,8.8-7.2,16-16.1,16h-97.9c-8.9,0-16.1-7.2-16.1-16
+                            V-160c0-8.8,7.2-16,16.1-16h97.9c8.9,0,16.1,7.2,16.1,16V81.9L-445,81.9z"/>
+                        <rect id="screen_2_" x="-568" y="-140" sketch:type="MSShapeGroup" class="st1" width="115" height="200">
+                        </rect>
+                        <path id="speaker" sketch:type="MSShapeGroup" class="st2" d="M-498-150.3c0,0.6-0.4,1.1-1,1.1h-20.1c-0.5,0-1-0.5-1-1.1v-2.6
+                            c0-0.6,0.4-1.1,1-1.1h20.1c0.5,0,1,0.5,1,1.1V-150.3L-498-150.3z"/>
+                        <circle id="camera_1_" sketch:type="MSShapeGroup" class="st2" cx="-509" cy="-164.1" r="3">
+                        </circle>
+                        <ellipse id="lock_1_" sketch:type="MSShapeGroup" class="st2" cx="-510" cy="77.9" rx="10" ry="10">
+                        </ellipse>
+                        <ellipse id="touch" sketch:type="MSShapeGroup" class="st3" cx="-510" cy="-50" rx="12" ry="12" opacity="0.5">
+                        </ellipse>
+                        <animate xlink:href="#touch" attributeName="cy"
+                           from="-50"
+                           to="-50" 
+                           dur="2s"
+                           values="-50; 30; -100; -50"
+                           keyTimes="0; 0.15; 0.85; 1"
+                            repeatCount="indefinite"/>
+                        <animate xlink:href="#touch" attributeName="opacity"
+                           from="0.4"
+                           to="0.4" 
+                           dur="2s"
+                           values="0.4; 0.4;1 ; 1;0.4; 0.4"
+                           keyTimes="0; 0.14;0.15; 0.85;0.86; 1"
+                            repeatCount="indefinite"/>
+                    </g>
+                </svg>
+                <!--macbook-->
+                <svg id="macbookScroll" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 138.9" xml:space="preserve">
+                    <g>
+                        <path class="st0" d="M0.5,0v122.1c0,9,7.3,16.3,16.3,16.3h366.4c9,0,16.3-7.3,16.3-16.3V0"/>
+                        <path class="st1" d="M20.9,0v28.5c0,4.5,3.7,8.1,8.1,8.1h342c4.5,0,8.1-3.7,8.1-8.1V0"/>
+                        <rect x="126.7" y="12.2" class="st0" width="122.1" height="16.3"/>
+                        <rect x="102.3" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <rect x="77.9" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <rect x="281.4" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <rect x="305.9" y="20.4" class="st0" width="16.3" height="8.1"/>
+                        <rect x="330.3" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <rect x="354.7" y="20.4" class="st0" width="16.3" height="8.1"/>
+                        <rect x="257" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <rect x="53.4" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <rect x="29" y="12.2" class="st0" width="16.3" height="16.3"/>
+                        <polyline class="st0" points="29,0 29,8.1 73.8,8.1 73.8,0 	"/>
+                        <polyline class="st0" points="81.9,0 81.9,8.1 98.2,8.1 98.2,0 	"/>
+                        <polyline class="st0" points="106.4,0 106.4,8.1 122.6,8.1 122.6,0 	"/>
+                        <polyline class="st0" points="130.8,0 130.8,8.1 147.1,8.1 147.1,0 	"/>
+                        <polyline class="st0" points="155.2,0 155.2,8.1 171.5,8.1 171.5,0 	"/>
+                        <polyline class="st0" points="179.6,0 179.6,8.1 195.9,8.1 195.9,0 	"/>
+                        <polyline class="st0" points="204.1,0 204.1,8.1 220.4,8.1 220.4,0 	"/>
+                        <polyline class="st0" points="228.5,0 228.5,8.1 244.8,8.1 244.8,0 	"/>
+                        <polyline class="st0" points="252.9,0 252.9,8.1 269.2,8.1 269.2,0 	"/>
+                        <polyline class="st0" points="277.4,0 277.4,8.1 293.6,8.1 293.6,0 	"/>
+                        <polyline class="st0" points="301.8,0 301.8,8.1 318.1,8.1 318.1,0 	"/>
+                        <polyline class="st0" points="326.2,0 326.2,8.1 371,8.1 371,0 	"/>
+                        <path class="st1" d="M236.6,138.4h-73.3v-1.2c0-4.5,3.7-6.9,8.1-6.9h57c4.5,0,8.1,2.4,8.1,6.9V138.4z"/>
+                        <path class="st0" d="M269.2,118.1c0,4.5-3.7,8.1-8.1,8.1H138.9c-4.5,0-8.1-3.7-8.1-8.1V52.9c0-4.5,3.7-8.1,8.1-8.1h122.1
+                            c4.5,0,8.1,3.7,8.1,8.1V118.1z"/>
+                        <ellipse id="mbtouch" sketch:type="MSShapeGroup" class="st3" cx="190" cy="90" rx="11" ry="11" opacity="0.5"></ellipse>
+                        <ellipse id="mbtouch2" sketch:type="MSShapeGroup" class="st3" cx="218" cy="82" rx="11" ry="11" opacity="0.5"></ellipse>
+                        <animate xlink:href="#mbtouch" attributeName="cy"
+                           from="80"
+                           to="80" 
+                           dur="2s"
+                           values="80; 110; 64; 80"
+                           keyTimes="0; 0.15; 0.85; 1"
+                            repeatCount="indefinite"/>
+                        <animate xlink:href="#mbtouch" attributeName="cx"
+                           from="190"
+                           to="190" 
+                           dur="2s"
+                           values="190; 190; 200; 190"
+                           keyTimes="0; 0.15; 0.85; 1"
+                            repeatCount="indefinite"/>
+                        <animate xlink:href="#mbtouch" attributeName="opacity"
+                           from="0.5"
+                           to="0.5" 
+                           dur="2s"
+                           values="0.5; 0.5;1 ; 1;0.5; 0.5"
+                           keyTimes="0; 0.14;0.15; 0.85;0.86; 1"
+                            repeatCount="indefinite"/>
+                        <animate xlink:href="#mbtouch2" attributeName="cy"
+                           from="75"
+                           to="75" 
+                           dur="2s"
+                           values="75; 105; 60; 75"
+                           keyTimes="0; 0.15; 0.85; 1"
+                            repeatCount="indefinite"/>
+                        <animate xlink:href="#mbtouch2" attributeName="cx"
+                           from="218"
+                           to="218" 
+                           dur="2s"
+                           values="218; 218; 228; 218"
+                           keyTimes="0; 0.15; 0.85; 1"
+                            repeatCount="indefinite"/>
+                        <animate xlink:href="#mbtouch2" attributeName="opacity"
+                           from="0.5"
+                           to="0.5" 
+                           dur="2s"
+                           values="0.5; 0.5;1 ; 1;0.5; 0.5"
+                           keyTimes="0; 0.14;0.15; 0.85;0.86; 1"
+                            repeatCount="indefinite"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div  ng-app="app" id="scPlayer" plangular="http://soundcloud.com/kidsofqc/sets/player" class="player">
+        <div>
+            <div>
+                <button ng-click="previous()">
+                    <i class="fa fa-step-backward" aria-hidden="true"></i>
+                </button>
+                <button title="Play/Pause" ng-click="playPause(index)">
+                    <div ng-if="player.playing !== track.src" data-icon="play"><i class="fa fa-play" aria-hidden="true"></i></div>
+                    <div ng-if="player.playing === track.src" data-icon="pause"><i class="fa fa-pause" aria-hidden="true"></i></div>
+                </button>
+                <button ng-click="next()">
+                    <i class="fa fa-step-forward" aria-hidden="true"></i>
+                </button>
+                <progress class="progress" ng-click="seek($event)" ng-value="currentTime / duration || 0"> {{ currentTime / duration }}</progress>
+                <samp>{{ currentTime | hhmmss }} / {{ duration | hhmmss }}</samp>
+            </div>
+        </div>
+        <ul class="list-reset">
+            <li ng-repeat="track in tracks">
+                <button title="Play {{track.title}}" ng-class="{'is-active': player.playing === track.src }" ng-click="playPause($index)">
+                    <span>{{track.user.username}} - {{track.title}}</span>
+                    <span>{{ track.duration / 1000 | hhmmss }}</span>
+                </button>
+            </li>
+        </ul>
+        <span class="sc">music hosted on <a href="https://soundcloud.com/kidsofqc" target="_blank">soundcloud</a></span>
+    </div>
+    <script>
+        var scPlayer = angular.module('scPlayer', ['plangular'])
+            .config(function(plangularConfigProvider){
+                plangularConfigProvider.clientId = 'aeb5b3f63ac0518f8362010439a77ca1';
+            });
+        angular.bootstrap(document.getElementById("scPlayer"), ['scPlayer']);
+    </script>
+    <script src="osDetection.js"></script>
+</body>
+</html>

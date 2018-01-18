@@ -1,0 +1,252 @@
+::-webkit-scrollbar { 
+    display: none; 
+}
+*{
+    margin:0;
+}
+html,body, wrapper, container{
+    height:100%;
+    width:100%;
+    font-family:lato, sans-serif;
+    color:#545456;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    cursor:pointer;
+}
+.bg{
+    background:url(logo.svg) center no-repeat;
+    background-size: 15%;
+    z-index:1;
+    position:fixed;
+    height:100%;
+    width:100%;
+}
+.scene{
+    margin:0;
+    text-align: center;
+    width:100%;
+    height:100vh;
+    z-index: 10;
+    position:absolute;
+}
+.photos{
+    height: 150vh;
+    display: block;
+}
+.photo{
+    position:fixed;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:center; 
+    display:none;
+}
+.photo:before{
+      display: block;
+      content: " ";
+      width: 100%;
+      padding-top: 100%;
+}
+#loader{
+    height:5px;
+    width:250px;
+    border:1px solid #545456;
+    left:50%;
+    transform: translateX(-50%);
+    top:75%;
+    position:fixed;
+}
+#loading{
+    height:100%;
+    background-color:#545456;
+    width:1px;
+    transition:1s all;
+}
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+#scroll{
+    display:none;
+    position:absolute;
+    text-align:center;
+    top:75%;
+    left:50%;
+    transform:translateX(-50%);
+}
+#scroll svg{
+    display:none;
+}
+#scPlayer{
+    position:fixed;
+    right:10px;
+    bottom:0;
+    z-index:10000002;
+    opacity:0.4;
+    transition:3s all;
+}
+#scPlayer:hover{
+    opacity: 0.9;
+    transition:0.3s all;
+}
+#scPlayer>div>div{
+    display:table;
+}
+#scPlayer>div>div button, #scPlayer>div>div progress, #scPlayer>div>div samp {
+    vertical-align: middle;
+    margin:5px;
+    font-family: lato, sans-serif;
+    font-size:11px;
+    color:#545456;
+}
+#scPlayer button{
+    background:none;
+    border:0;
+    font-size: 11px;
+}
+button {
+    outline: none;
+}
+#scPlayer button:hover{
+    color:gray;
+    cursor:pointer;
+}
+progress:hover{
+    cursor:pointer;
+}
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    height:7px;
+}
+progress[value]::-webkit-progress-bar {
+    background:none;
+    border:1px solid #545456;
+    height:7px;
+}
+progress[value]::-webkit-progress-value {
+    background:#545456;
+}
+#scPlayer > ul{
+    list-style-type: none;
+    padding: 0;
+    border: 1px solid #545456;
+    max-height:70px;
+    overflow:scroll;
+}
+#scPlayer > ul > li{
+    padding:0;
+}
+#scPlayer > ul > li >button{
+    width: 100%;
+    padding: 5px;
+}
+#scPlayer > ul > li >button.is-active{
+    background-color: lightgrey;
+}
+
+#scPlayer > ul > li >button>span:nth-of-type(1){
+    float:left;
+}
+#scPlayer > ul > li >button>span:nth-of-type(2){
+    float:right;
+}
+#scPlayer .sc{
+    font-size:0.6em;
+    float:right;
+}
+#scPlayer .sc > a{
+    color: #ff7700;
+}
+#topBar{
+    width:100%;
+    height:50px;
+    z-index:10000000;
+    position:fixed;
+}
+#topBar div{
+    display:inline-block;
+     
+}
+#topBar > div{
+    font-size:1em;
+    margin-left:30px;
+}
+#topBar > div > div{
+    font-size:0.8em;
+    margin-left:10px;
+}
+#about{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 10000001;
+    position: fixed;
+    display:none;
+    overflow:scroll;
+}
+#about > .text{
+    width:95%;
+    max-width:550px;
+    border:1px solid #545456;
+    color: #545456;
+    position:absolute;
+    left:50%;
+    top:15%;
+    transform: translateX(-50%);
+    padding:10px;
+    font-weight: 300;
+    line-height: 25px;
+    box-sizing:border-box;
+}
+#about > .close{
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+#about .credit{
+    font-size: small;
+    line-height: 5px;
+    margin-top: 20px;
+}
+#about > .close:hover{
+    cursor:pointer;
+}
+#about .social{
+    text-align:center;
+}
+.social > a{
+    margin:0 3px;
+}
+#about blockquote{
+    text-align:right;
+    font-style:italic;
+}
+#about a{
+    color:#545456
+}
+#about a:hover{
+    color:lightgray;
+}
+.spacer{
+    height: 100vh;
+    width: 1px;
+    position: relative;
+    top: 100vh;
+}
+#iphoneScroll{
+    height:100px;
+}
+#iphoneScroll .st0,
+#iphoneScroll .st1,
+#iphoneScroll .st2{fill:none;stroke:#545456;}
+#iphoneScroll .st3{fill:#e4e5e6;stroke:#c2c4c6;stroke-width:2}
+#macbookScroll{
+        width:300px;
+    }
+#macbookScroll .st0,
+#macbookScroll .st1{fill:none;stroke:#545456;}
+#macbookScroll .st3{fill:#e4e5e6;stroke:#c2c4c6;stroke-width:2}
